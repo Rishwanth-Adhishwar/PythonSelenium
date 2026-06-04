@@ -2,15 +2,14 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_extension(r"D:\PythonSeleniumExpleo\PythonSeleniumBasics\adBlockEx.crx")
+driver = webdriver.Chrome(options=options)
+
 driver.get("https://automationexercise.com/")
 driver.maximize_window()
 driver.implicitly_wait(15)
 print("Title:", driver.title)
-driver.execute_script("""
-var ads = document.querySelectorAll('iframe, .ads, .advertisement');
-ads.forEach(ad => ad.remove());
-""")
 lpText = driver.find_element(By.XPATH, value="//a[@href='/login']").text
 try:
     assert lpText == "Signup / Login"
