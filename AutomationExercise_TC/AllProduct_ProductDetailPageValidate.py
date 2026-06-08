@@ -1,7 +1,12 @@
+import select
+
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+from tkinter.tix import Select
 
 driver = webdriver.Chrome()
 driver.maximize_window()
@@ -15,9 +20,7 @@ driver.find_element(
 ).click()
 
 a1 = wait.until(
-    ec.visibility_of_element_located(
-        (By.XPATH, "//h2[@class='title text-center']")
-    )
+    ec.visibility_of_element_located((By.XPATH, "//h2[@class='title text-center']"))
 ).text
 
 try:
@@ -58,11 +61,7 @@ driver.execute_script(
     product,
 )
 
-a2 = wait.until(
-    ec.visibility_of_element_located(
-        (By.XPATH, "//span/button")
-    )
-).text
+a2 = wait.until(ec.visibility_of_element_located((By.XPATH, "//span/button"))).text
 
 try:
     assert a2.__contains__("Add to cart")
@@ -136,6 +135,7 @@ a8 = driver.find_element(
     "//div[@class='product-information']/child::p[4]/b",
 ).text
 
+   
 try:
     assert a8.__contains__("Brand:")
     print("Product Brand Displayed")
