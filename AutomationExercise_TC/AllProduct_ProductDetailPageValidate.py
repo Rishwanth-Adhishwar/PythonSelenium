@@ -6,8 +6,6 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-from tkinter.tix import Select
-
 driver = webdriver.Chrome()
 driver.maximize_window()
 wait = WebDriverWait(driver, 15)
@@ -135,7 +133,7 @@ a8 = driver.find_element(
     "//div[@class='product-information']/child::p[4]/b",
 ).text
 
-   
+
 try:
     assert a8.__contains__("Brand:")
     print("Product Brand Displayed")

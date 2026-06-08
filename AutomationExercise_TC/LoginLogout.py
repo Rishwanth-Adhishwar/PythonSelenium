@@ -11,38 +11,24 @@ wait = WebDriverWait(driver, 15)
 driver.get("https://automationexercise.com/")
 
 loginbtn = wait.until(
-    EC.visibility_of_element_located(
-        (By.XPATH, "//a[@href='/login']")
-    )
+    EC.visibility_of_element_located((By.XPATH, "//a[@href='/login']"))
 )
 loginbtn.click()
 wait.until(
-    EC.visibility_of_element_located(
-        (By.XPATH, "//input[@data-qa='login-email']")
-    )
+    EC.visibility_of_element_located((By.XPATH, "//input[@data-qa='login-email']"))
 ).send_keys("TamilK@gmail.com")
 
-driver.find_element(
-    By.XPATH,
-    "//input[@data-qa='login-password']"
-).send_keys("tamil2k")
+driver.find_element(By.XPATH, "//input[@data-qa='login-password']").send_keys("tamil2k")
 
-driver.find_element(
-    By.XPATH,
-    "//button[@data-qa='login-button']"
-).click()
+driver.find_element(By.XPATH, "//button[@data-qa='login-button']").click()
 
 logout = wait.until(
-    EC.visibility_of_element_located(
-        (By.XPATH, "//a[@href='/logout']")
-    )
+    EC.visibility_of_element_located((By.XPATH, "//a[@href='/logout']"))
 )
 
 logout.click()
 loginbtn = wait.until(
-    EC.visibility_of_element_located(
-        (By.XPATH, "//a[@href='/login']")
-    )
+    EC.visibility_of_element_located((By.XPATH, "//a[@href='/login']"))
 )
 
 lbs = loginbtn.text
