@@ -24,7 +24,7 @@ class TestLoginTN:
 
         wait.until(
             ec.element_to_be_clickable(
-                (By.XPATH, "//a[@title='My Account']/span[text()='My Account']")
+                (By.XPATH, "//span[text()='My Account']")
             )
         ).click()
 
