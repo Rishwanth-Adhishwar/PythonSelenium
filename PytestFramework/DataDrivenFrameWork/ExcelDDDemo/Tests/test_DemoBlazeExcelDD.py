@@ -9,7 +9,7 @@ from Utility import logCreator
 
 @pytest.mark.parametrize(
     "username,password",
-    get_data("../Excel/loginData.xlsx", "LoginDataPy"),
+    get_data("", "LoginDataPy"),
 )
 class Test_Logins:
 
