@@ -22,8 +22,10 @@ class TestLoginTN:
         log = logCreators.log_generator()
         wait = WebDriverWait(self.driver, 15)
 
-        self.driver.find_element(
-            By.XPATH, value="//a[@title='My Account']/child::span[text()='My Account']"
+        wait.until(
+            ec.element_to_be_clickable(
+                (By.XPATH, "//a[@title='My Account']/span[text()='My Account']")
+            )
         ).click()
 
         wait.until(
