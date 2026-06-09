@@ -33,11 +33,11 @@ class TestLogin:
         ).click()
         actual = wait.until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//a[@id='nameofuser']")
+                (By.XPATH, "//a[@id='nameofusr']")
             )
         ).text
         try:
-            assert actual.__contains__("admin")
+            assert actual.__contains__("jolly")
             print("Login Successful")
         except AssertionError as a:
             print(a)
@@ -70,7 +70,7 @@ class TestLogin:
         actual = self.driver.switch_to.alert.text
 
         try:
-            assert actual.__contains__("User does not exist.")
+            assert actual.__contains__("hello")
             print("A warning Pop up displayed")
         except AssertionError as a:
             print(a)
