@@ -12,7 +12,7 @@ from Utility import logCreators
 @pytest.mark.parametrize(
     "username,password",
     get_Excel_Data(
-        "D:\\PythonSeleniumExpleo\\PytestFramework\\DataDrivenFrameWork\\TutorialsNinja\\DataProviders\\loginTN.xlsx",
+        "PytestFramework/DataDrivenFrameWork/TutorialsNinja/DataProviders/loginTN.xlsx",
         "loginTestTN",
     ),
 )
