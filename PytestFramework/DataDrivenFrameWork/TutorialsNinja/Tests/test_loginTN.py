@@ -22,11 +22,10 @@ class TestLoginTN:
         log = logCreators.log_generator()
         wait = WebDriverWait(self.driver, 15)
 
-        wait.until(
-            ec.element_to_be_clickable(
-                (By.XPATH, "//span[text()='My Account']")
-            )
-        ).click()
+        my_account = wait.until(
+            ec.element_to_be_clickable((By.XPATH, "//a[@title='My Account']"))
+        )
+        my_account.click()
 
         wait.until(
             ec.visibility_of_element_located(
@@ -58,10 +57,7 @@ class TestLoginTN:
         try:
             actual = wait.until(
                 ec.visibility_of_element_located(
-                    (
-                        By.XPATH,
-                        "//div[@id='content']/child::h2[text()='My Account']",
-                    )
+                    (By.XPATH, "//div[@id='content']/child::h2[text()='My Account']")
                 )
             ).text
 
