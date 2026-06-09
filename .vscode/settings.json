@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./PytestFramework/DataDrivenFrameWork/ExcelDDDemo/Utility"
+    ]
+}

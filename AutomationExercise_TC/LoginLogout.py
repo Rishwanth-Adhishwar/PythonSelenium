@@ -16,7 +16,7 @@ loginbtn = wait.until(
 loginbtn.click()
 wait.until(
     EC.visibility_of_element_located((By.XPATH, "//input[@data-qa='login-email']"))
-).send_keys("TamilK@gmail.com")
+).send_keys("TamilK123456@gmail.com")
 
 driver.find_element(By.XPATH, "//input[@data-qa='login-password']").send_keys("tamil2k")
 

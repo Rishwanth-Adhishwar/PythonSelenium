@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-@pytest.mark.usefixtures("setup_and_teardown")
+@pytest.mark.usefixtures("test_up_and_down")
 class TestSearch:
     def test_validproduct(self):
         self.driver.find_element(By.NAME, value="search").send_keys("HP")
@@ -12,18 +12,16 @@ class TestSearch:
             By.XPATH, value="//button[contains(@class,'btn-default')]"
         ).click()
         assert self.driver.find_element(By.LINK_TEXT, value="HP LP3065").is_displayed()
-        print("m1")
 
     def test_invalidproduct(self):
         self.driver.find_element(By.NAME, value="search").send_keys("Honda")
         self.driver.find_element(
             By.XPATH, value="//button[contains(@class,'btn-default')]"
         ).click()
-        etext = "There is no pruct that matches the search criteria."
+        etext = "There is no product that matches the search criteria."
         assert self.driver.find_element(
             By.XPATH, value="//input[@id='button-search']/following-sibling::p"
         ).text.__eq__(etext)
-        print("m2")
 
     def test_noproduct(self):
         self.driver.find_element(By.NAME, value="search").send_keys("")
@@ -34,4 +32,3 @@ class TestSearch:
         assert self.driver.find_element(
             By.XPATH, value="//input[@id='button-search']/following-sibling::p"
         ).text.__eq__(etext)
-        print("m3")

@@ -1,0 +1,49 @@
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from configReader import config_read
+
+
+@pytest.fixture()
+def test_setup_and_teardown():
+    global driver
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.implicitly_wait(15)
+    driver.get(config_read("basic info", "url"))
+    yield
+    driver.quit()
+
+
+def test_validproduct(test_setup_and_teardown):
+    driver.find_element(By.NAME, value="search").send_keys(
+        config_read("search product", "prod1")
+    )
+    driver.find_element(
+        By.XPATH, value="//button[contains(@class,'btn-default')]"
+    ).click()
+    assert driver.find_element(By.LINK_TEXT, value="HP LP3065").is_displayed()
+
+
+def test_invalidproduct(test_setup_and_teardown):
+    driver.find_element(By.NAME, value="search").send_keys(
+        config_read("search product", "prod2")
+    )
+    driver.find_element(
+        By.XPATH, value="//button[contains(@class,'btn-default')]"
+    ).click()
+    etext = "There is no product that matches the search criteria."
+    assert driver.find_element(
+        By.XPATH, value="//input[@id='button-search']/following-sibling::p"
+    ).text.__eq__(etext)
+
+
+def test_noproduct(test_setup_and_teardown):
+    driver.find_element(By.NAME, value="search").send_keys("")
+    driver.find_element(
+        By.XPATH, value="//button[contains(@class,'btn-default')]"
+    ).click()
+    etext = "There is no product that matches the search criteria."
+    assert driver.find_element(
+        By.XPATH, value="//input[@id='button-search']/following-sibling::p"
+    ).text.__eq__(etext)
