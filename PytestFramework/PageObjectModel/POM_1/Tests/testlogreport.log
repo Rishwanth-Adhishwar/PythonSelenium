@@ -1,0 +1,33 @@
+2026-06-10 14:50:53 PM - INFO - Starting Valid Login Test
+2026-06-10 14:50:53 PM - INFO - Clicking My Account
+2026-06-10 14:50:53 PM - INFO - Clicking Login
+2026-06-10 14:50:53 PM - INFO - Entering Login Credentials
+2026-06-10 14:50:53 PM - INFO - Verifying Login Success
+2026-06-10 14:50:55 PM - INFO - Valid Login Test Passed
+2026-06-10 14:51:00 PM - INFO - Starting Search Function Test
+2026-06-10 14:51:00 PM - INFO - Entering Search Word
+2026-06-10 14:51:01 PM - INFO - Verifying Search Result
+2026-06-10 14:51:01 PM - INFO - Search Function Test Passed
+2026-06-10 14:51:05 PM - INFO - Starting Register Test
+2026-06-10 14:51:05 PM - INFO - Opening Account Menu
+2026-06-10 14:51:06 PM - INFO - Opening Login Page
+2026-06-10 14:51:06 PM - INFO - Clicking Continue for Registration
+2026-06-10 14:51:06 PM - INFO - Entering Registration Details
+2026-06-10 14:51:07 PM - INFO - Verifying Registration Success
+2026-06-10 14:51:38 PM - INFO - Starting Valid Login Test
+2026-06-10 14:51:38 PM - INFO - Clicking My Account
+2026-06-10 14:51:38 PM - INFO - Clicking Login
+2026-06-10 14:51:39 PM - INFO - Entering Login Credentials
+2026-06-10 14:51:39 PM - INFO - Verifying Login Success
+2026-06-10 14:51:40 PM - INFO - Valid Login Test Passed
+2026-06-10 14:51:45 PM - INFO - Starting Search Function Test
+2026-06-10 14:51:45 PM - INFO - Entering Search Word
+2026-06-10 14:51:45 PM - INFO - Verifying Search Result
+2026-06-10 14:51:45 PM - INFO - Search Function Test Passed
+2026-06-10 14:51:50 PM - INFO - Starting Register Test
+2026-06-10 14:51:50 PM - INFO - Opening Account Menu
+2026-06-10 14:51:51 PM - INFO - Opening Login Page
+2026-06-10 14:51:51 PM - INFO - Clicking Continue for Registration
+2026-06-10 14:51:51 PM - INFO - Entering Registration Details
+2026-06-10 14:51:53 PM - INFO - Verifying Registration Success
+2026-06-10 14:51:53 PM - INFO - Register Test Passed
