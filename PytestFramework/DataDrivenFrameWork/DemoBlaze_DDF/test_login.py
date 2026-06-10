@@ -33,7 +33,7 @@ class TestLogin:
         ).click()
         actual = wait.until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//a[@id='nameofusr']")
+                (By.XPATH, "//a[@id='nameofuser']")
             )
         ).text
         try:
